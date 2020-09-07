@@ -35,11 +35,19 @@ public class CalculatorTest {
 		assertEquals("Addition passed",5.0,calculator.addition(2.0, 3.0),0.01);
 	}
 
+	public void testfailAddition() {
+		Calculator cal=new Calculator();
+		assertNotEquals("Addition failed",5.0,cal.addition(1.0, 3.0),0.01);
+	}
+
 	@Test
 	public void testSubtraction() {
-		Calculator calculator1 =new Calculator();
-		assertEquals("sub passes",1, calculator1.subtraction(2, 1));
-
+		assertEquals("Subtraction passed",1,new Calculator().subtraction(4,3));
 	}
+	@Test
+	public void testfailSubtraction() {
+		assertNotEquals("Subtraction failed",-1,new Calculator().subtraction(4,3));
+	}
+
 
 }
